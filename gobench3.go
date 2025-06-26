@@ -256,6 +256,9 @@ func client(configuration *Configuration, result *Result, done *sync.WaitGroup) 
 			for key, value := range configuration.headers {
 				req.Header.Set(key, value)
 			}
+			if configuration.contentType != "" {
+				 req.Header.Set("Content-Type", configuration.contentType)
+							}
 
 			req.SetBody(configuration.postData)
 			resp := fasthttp.AcquireResponse()
