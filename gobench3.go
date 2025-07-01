@@ -94,7 +94,7 @@ func (c *MyConn) Write(b []byte) (n int, err error) {
 }
 
 func init() {
-	flag.Int64Var(&requests, "r", -1, "Number of requests per client")
+	flag.Int64Var(&requests, "r", 500, "Number of requests per client")
 	flag.IntVar(&clients, "c", 500, "Number of concurrent clients")
 	flag.StringVar(&url, "u", "", "URL")
 	flag.StringVar(&urlsFilePath, "f", "", "URL's file path (line separated)")
