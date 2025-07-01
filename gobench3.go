@@ -95,14 +95,14 @@ func (c *MyConn) Write(b []byte) (n int, err error) {
 
 func init() {
 	flag.Int64Var(&requests, "r", -1, "Number of requests per client")
-	flag.IntVar(&clients, "c", 100, "Number of concurrent clients")
+	flag.IntVar(&clients, "c", 500, "Number of concurrent clients")
 	flag.StringVar(&url, "u", "", "URL")
 	flag.StringVar(&urlsFilePath, "f", "", "URL's file path (line separated)")
 	flag.BoolVar(&keepAlive, "k", true, "Do HTTP keep-alive")
 	flag.StringVar(&postDataFilePath, "d", "", "HTTP POST data file path")
 	flag.Int64Var(&period, "t", -1, "Period of time (in seconds)")
-	flag.IntVar(&writeTimeout, "tw", 5000, "Write timeout (in milliseconds)")
-	flag.IntVar(&readTimeout, "tr", 5000, "Read timeout (in milliseconds)")
+	flag.IntVar(&writeTimeout, "tw", 90000, "Write timeout (in milliseconds)")
+	flag.IntVar(&readTimeout, "tr", 90000, "Read timeout (in milliseconds)")
 	flag.StringVar(&Authorization, "auth", "", "Authorization header")
 	flag.StringVar(&geolocation, "gl", "", "Geo Location Header")
 	flag.StringVar(&contentType, "ct", "", "Content type")
